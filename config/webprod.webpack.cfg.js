@@ -73,7 +73,11 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.json', '.css']
+        extensions: ['.js', '.json', '.css'],
+        alias: {
+            '@root': path.resolve(__dirname, '../'),
+            '@src': path.resolve(__dirname, '../', 'src')
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({

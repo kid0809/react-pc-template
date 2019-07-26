@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-import LoginRoute from './routes/LoginRoute';
-import PrivateRoute from './routes/PrivateRoute';
-import Login from './components/business/Login';
-import Dashboard from './components/business/Dashboard';
+import PermissionRoute from './routes/PermissionRoute';
+import Loading from './components/basic/Loading';
+import Routes from './routes';
 import './styles/main.scss';
-
 
 class App extends Component {
     render() {
         return (
             <Router>
-                <Switch>
-                    <LoginRoute path="/login" component={Login} />
-                    <PrivateRoute path="/" component={Dashboard} />
-                </Switch>
+                <Suspense fallback={<Loading />}>
+                    <Switch>
+                        <PermissionRoute
+                            config={{
+                                ...Routes
+                            }}
+                        />
+                    </Switch>
+                </Suspense>
             </Router>
         );
     }

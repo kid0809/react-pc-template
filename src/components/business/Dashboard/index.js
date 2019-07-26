@@ -33,7 +33,7 @@ class Dashboard extends Component {
                     <ErrorBoundary>
                         <Menu menus={menus} />
                         <div className="dashboard-container">
-                            <Content />
+                            <Content component={this.props.component} />
                             <Footer />
                         </div>
                     </ErrorBoundary>
