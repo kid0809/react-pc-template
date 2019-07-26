@@ -1,31 +1,9 @@
-import React, { Suspense, lazy } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import Loading from '../../basic/Loading';
-import routes from '../../../routes';
+import React from 'react';
 
-const NoMatch = lazy(() =>
-    import(/* webpackChunkName: "NoMatch" */ '../NoMatch')
-);
-
-const Content = () => {
+const Content = ({ component: Component }) => {
     return (
         <div className="dashboard-content">
-            <Suspense fallback={<Loading />}>
-                <Switch>
-                    {routes.map(item => {
-                        return (
-                            <Route
-                                key={item.key}
-                                path={item.path}
-                                component={item.component}
-                                exact
-                            />
-                        );
-                    })}
-                    <Redirect exact from="/" to="/home" />
-                    <Route component={NoMatch} />
-                </Switch>
-            </Suspense>
+            <Component />
         </div>
     );
 };

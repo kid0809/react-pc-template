@@ -1,9 +1,6 @@
-const apiHost = '127.0.0.1';
-const prefix = '/api';
-const webport = '8080';
-
 module.exports = {
-    apiHost,
+    apiHost: '127.0.0.1',
+    // prefix: '/api',
     // apiPath,
-    webport
+    webport: '8080'
 };
