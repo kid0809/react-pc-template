@@ -1,7 +1,20 @@
-.header-wrap {
-    height: 40px;
-    line-height: 40px;
-    padding-right: 10px;
-    border-bottom: $border;
-    text-align: right;
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  &:hover {
+    color: #1890ff;
+  }
+}
+
+.header-right{
+  span, a{
+    display:inline-block;
+    height: 100%;
+    padding: 0 12px;
+    cursor: pointer;
+    transition: all .3s;
+  }
 }

@@ -4,24 +4,25 @@ import { hot } from 'react-hot-loader/root';
 import PermissionRoute from './routes/PermissionRoute';
 import Loading from './components/basic/Loading';
 import Routes from './routes';
-import './styles/main.scss';
+import './styles/normalize.scss';
+import './styles/common.scss';
 
 class App extends Component {
-    render() {
-        return (
-            <Router>
-                <Suspense fallback={<Loading />}>
-                    <Switch>
-                        <PermissionRoute
-                            config={{
-                                ...Routes
-                            }}
-                        />
-                    </Switch>
-                </Suspense>
-            </Router>
-        );
-    }
+  render() {
+    return (
+      <Router>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <PermissionRoute
+              config={{
+                ...Routes
+              }}
+            />
+          </Switch>
+        </Suspense>
+      </Router>
+    );
+  }
 }
 
 export default hot(App);

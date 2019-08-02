@@ -1,17 +1,18 @@
 import React from 'react';
-import { setToken } from '../../../utils/storage';
+import { setToken } from '@src/utils/storage';
+import './styles.scss';
 
 class Login extends React.Component {
     login = () => {
-        setToken('isLogin', 'true');
-        this.props.history.push('/');
-    }
+      setToken('isLogin', 'true');
+      this.props.history.push('/');
+    };
     render() {
-        return (
-            <div className="login-wrap">
-                <button onClick={this.login}>登录</button>
-            </div>
-        );
+      return (
+        <div styleName="login-wrap">
+          <button onClick={this.login}>登录</button>
+        </div>
+      );
     }
 }
 

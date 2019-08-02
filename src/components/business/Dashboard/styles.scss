@@ -1,22 +1,25 @@
 .dashboard-wrap {
-    height: 100vh;
+  .header {
+    background: #fff;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-
-    .dashboard-main {
-        flex: 1;
-        display: flex;
-    }
-
-    .dashboard-container {
-        height: 100%;
-        overflow-y: auto;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .dashboard-content {
-        flex: 1;
-    }
+    justify-content: space-between;
+  }
+  .content {
+    margin: 20px 16px;
+    padding: 24px;
+    background: #fff;
+    min-height: 280px;
+    position: relative;
+  }
+  .logo {
+    background: url('~@src/images/logo_dx.png') center center no-repeat;
+    background-size: contain;
+    height: 50px;
+    margin: 16px 12px;
+  }
+  .fullHeight{
+    min-height: 100vh;
+    position: relative;
+  }
 }

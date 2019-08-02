@@ -1,12 +1,11 @@
 import React from 'react';
 import './styles.scss';
+import { Spin } from 'antd';
 
-const Loading = () => {
-    return (
-        <div className="loading-wrap">
-            loading...
-        </div>
-    );
+export default (props) => {
+  return (
+    <div styleName="loading-wrap">
+      <Spin />
+    </div>
+  );
 };
-
-export default Loading;

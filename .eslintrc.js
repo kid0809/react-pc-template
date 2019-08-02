@@ -18,16 +18,17 @@ module.exports = {
     ],
     "rules": {
         "semi": 2,
-        "indent": [2, 4, { "SwitchCase": 1 }], // 默认4格缩进
+        "indent": [2, 2, { "SwitchCase": 1 }], // 默认2格缩进
         "linebreak-style": 0,
         "no-class-assign": 0, // 忽略不能重新定义class
-        "no-console": 1,
+        // "no-console": 1,
+        "no-console": 0,
         "camelcase": [1, {"properties": "always"}],
         "no-unused-vars": 0,
         "no-trailing-spaces": 2, // 禁用尾行空白
         "key-spacing": 2, // 要求冒号后面有空格
         "keyword-spacing": 2, // 在关键字前后有空格
-        "comma-dangle": ["error", "never"], // 禁用拖尾逗号
+        // "comma-dangle": ["error", "never"], // 禁用拖尾逗号
         "comma-spacing": 2, // 要求逗号后有空格
         "space-infix-ops": ["error", {"int32Hint": true}], // 要求操作符有空格
         "object-curly-spacing": [1, 'always'], // 花括号中使用一致的空格
