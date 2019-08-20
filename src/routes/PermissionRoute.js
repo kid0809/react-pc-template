@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { getToken } from '@src/utils/storage';
 
 export default (props) => {
-  const { config: Config, location: Location, history } = props;
+  const { config: Config, location: Location, globalConfig } = props;
   const {
     routes,
     homePath,
@@ -27,8 +27,10 @@ export default (props) => {
     } else {
       const {
         component: nofoundRouteComponent,
-        layout: NotfoundLayout
+        layout: NotfoundLayout,
+        title
       } = routes.find((item) => item.path == notfoundPath);
+      document.title = `${title}${globalConfig.titleSuffix}`;
       out = (
         <Route
           render={(props) => {
@@ -49,14 +51,20 @@ export default (props) => {
     }
   } else {
     // 路由存在
-    const { loginAuth, component: Component, layout: Layout } = targetRoute;
-    if (isLogin && !loginAuth) {
+    const {
+      loginAuth,
+      component: Component,
+      layout: Layout,
+      title
+    } = targetRoute;
+    if (isLogin && loginAuth === false) {
       // 登录访问未登录才能访问的地址
       out = <Redirect to={homePath} />;
     } else if (!isLogin && loginAuth) {
       // 未登录访问登录才能访问的地址
       out = <Redirect to={loginPath} />;
     } else {
+      document.title = `${title}${globalConfig.titleSuffix}`;
       out = (
         <Route
           render={(props) => {
@@ -74,5 +82,6 @@ export default (props) => {
       );
     }
   }
+  console.log(`~~~~~~~~`);
   return out;
 };

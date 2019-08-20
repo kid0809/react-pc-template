@@ -19,30 +19,32 @@ import DashboardComponents from '../components/business/Dashboard';
 
 const routes = [
   {
-    key: 'home',
     path: '/home',
+    title: '首页',
+    menuKey: '1-1',
+    loginAuth: true,
     component: HomeComponent,
-    breadcrumbName: '首页',
-    loginAuth: true,
     layout: DashboardComponents
   },
   {
-    key: 'about',
     path: '/about',
-    component: AboutComponent,
-    breadcrumbName: '关于',
+    title: '关于',
+    menuKey: '1-2',
     loginAuth: true,
+    component: AboutComponent,
     layout: DashboardComponents
   },
   {
-    key: 'login',
     path: '/login',
-    component: LoginComponent,
-    loginAuth: false
+    title: '登录',
+    menuKey: null,
+    loginAuth: false,
+    component: LoginComponent
   },
   {
-    key: 'notFound',
     path: '/notFound',
+    title: '404',
+    menuKey: null,
     component: NoMatchComponents,
     layout: DashboardComponents
   }
