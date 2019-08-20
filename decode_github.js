@@ -65,7 +65,7 @@ function decode() {
     const fileList = fileTree(__dirname, false);
     fileList.map(item => {
       let itemName = path.basename(item);
-      if(itemName == 'decode.js' || itemName == 'node_modules') return;
+      if(itemName == 'decode.js' || itemName == 'node_modules' || itemName == '.git') return;
       let copyName = `${itemName}_decode`;
       let copyDir = path.join(path.dirname(item), copyName);
       fs.copySync(item, copyDir);
