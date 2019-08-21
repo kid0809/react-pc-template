@@ -1,12 +1,13 @@
 import React from 'react';
 import { Icon, Avatar, Menu, Dropdown } from 'antd';
-import { clearToken } from '@src/utils/storage';
+import { clearToken, setAlert } from '@src/utils/storage';
 import './styles.scss';
 
 const Header = ({ toggle, collapsed, history }) => {
   const logout = () => {
+    setAlert('登出成功');
     clearToken('isLogin');
-    history.push('/');
+    history.push('/login');
   };
   const dropMenu = (
     <Menu>

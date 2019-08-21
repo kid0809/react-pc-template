@@ -16,3 +16,5 @@ caih-cloud-ui.iml
 
 # eslint缓存
 /.eslintcache
+
+decode.js

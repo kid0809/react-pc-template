@@ -1,5 +1,5 @@
 import React from 'react';
-import { setToken, setAlert, removeAllCookie } from '@src/utils/storage';
+import { setToken, setAlert } from '@src/utils/storage';
 import { Form, Icon, Input, Button } from 'antd';
 import './styles.scss';
 import validator from 'validator';
@@ -67,7 +67,10 @@ class Login extends React.Component {
   render() {
     return (
       <div styleName="login-wrap">
-        <LoginForm {...this.props} />
+        <div styleName="login-box">
+          <legend>用户登录</legend>
+          <LoginForm {...this.props} />
+        </div>
       </div>
     );
   }
